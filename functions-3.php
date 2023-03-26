@@ -7,9 +7,9 @@
   *
 */
 
-add_action( 'woocommerce_single_product_summary', 'my_product_sold_count_custom', 11 );
+add_action( 'woocommerce_single_product_summary', 'my_product_sold_count_compared', 11 );
   
-function my_product_sold_count_custom() {
+function my_product_sold_count_compared() {
    global $product;
     
    // Get all of the orders for the last hour
@@ -91,8 +91,8 @@ function my_product_sold_count_custom() {
     if($count_hour > 4) {
       echo '<p class="hotline"><span class="dashicons dashicons-superhero-alt"></span> Hot product! Already <span class="highlight">' . $count_hour . '</span> sold in the last hour! Be quick!</p>';
     } elseif ( $count_week > 10 && $count_week < 50){ 
-	    echo '<p><span class="dashicons dashicons-chart-line"></span>' . $count_week . ' sold in the last week</p>';
-	  } elseif ( $count_week >= 50 ) {
-	    echo '<p class="hotline"><span class="dashicons dashicons-awards"></span> Hot product! Already <span class="highlight">' . $count_week . '</span> sold in the last 7 days</p>';
+    	echo '<p><span class="dashicons dashicons-chart-line"></span>' . $count_week . ' sold in the last week</p>';
+    } elseif ( $count_week >= 50 ) {
+    	echo '<p class="hotline"><span class="dashicons dashicons-awards"></span> Hot product! Already <span class="highlight">' . $count_week . '</span> sold in the last 7 days</p>';
     }
 }
