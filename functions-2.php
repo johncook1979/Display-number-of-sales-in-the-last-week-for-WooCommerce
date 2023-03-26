@@ -48,7 +48,7 @@ function my_product_sold_count_custom() {
     }
     
 
-    // conditionally dislay the total sold in the past week
+    // conditionally dislay the total sold in the past custom time
     if ( $count > 10 && $count < 50){ 
 	    echo '<p><span class="dashicons dashicons-chart-line"></span>' . $count . ' sold in the last week</p>';
 	  } elseif ( $count >= 50 ) {
